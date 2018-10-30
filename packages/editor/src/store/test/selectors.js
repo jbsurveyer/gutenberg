@@ -230,6 +230,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostNew( state ) ).toBe( true );
@@ -247,6 +248,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostNew( state ) ).toBe( false );
@@ -418,6 +420,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostAttribute( state, 'slug' ) ).toBe( 'post slug' );
@@ -433,6 +436,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostAttribute( state, 'slug' ) ).toBe( 'new slug' );
@@ -448,6 +452,7 @@ describe( 'selectors', () => {
 						edits: { status: 'private' },
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostAttribute( state, 'title' ) ).toBe( 'sassel' );
@@ -463,6 +468,7 @@ describe( 'selectors', () => {
 						edits: { title: 'youcha' },
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostAttribute( state, 'title' ) ).toBe( 'youcha' );
@@ -476,6 +482,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostAttribute( state, 'valueOf' ) ).toBeUndefined();
@@ -590,6 +597,7 @@ describe( 'selectors', () => {
 						edits: { title: 'terga' },
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getPostEdits( state ) ).toEqual( { title: 'terga' } );
@@ -607,6 +615,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostVisibility( state ) ).toBe( 'public' );
@@ -622,6 +631,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostVisibility( state ) ).toBe( 'private' );
@@ -638,6 +648,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostVisibility( state ) ).toBe( 'password' );
@@ -657,6 +668,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getEditedPostVisibility( state ) ).toBe( 'private' );
@@ -924,6 +936,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 				saving: {},
 			};
@@ -940,6 +953,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					title: 'sassel',
 				},
@@ -960,6 +974,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					title: 'sassel',
 				},
@@ -978,6 +993,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					excerpt: 'sassel',
 				},
@@ -1006,6 +1022,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 				saving: {},
 			};
@@ -1024,6 +1041,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					title: 'sassel',
 				},
@@ -1047,6 +1065,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					title: 'sassel',
 				},
@@ -1068,6 +1087,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					title: 'foo',
 					content: 'foo',
@@ -1097,6 +1117,7 @@ describe( 'selectors', () => {
 								},
 							},
 						},
+						initialEdits: {},
 						currentPost: {
 							title: 'foo',
 							content: 'foo',
@@ -1168,6 +1189,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -1193,6 +1215,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -1208,6 +1231,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {
 					content: '',
 				},
@@ -1227,6 +1251,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -1242,6 +1267,7 @@ describe( 'selectors', () => {
 						edits: { date: moment().add( 7, 'days' ).format( '' ) },
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostBeingScheduled( state ) ).toBe( true );
@@ -1254,6 +1280,7 @@ describe( 'selectors', () => {
 						edits: { date: '2016-05-30T17:21:39' },
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostBeingScheduled( state ) ).toBe( false );
@@ -1261,16 +1288,6 @@ describe( 'selectors', () => {
 	} );
 
 	describe( 'isEditedPostDateFloating', () => {
-		let editor;
-
-		beforeEach( () => {
-			editor = {
-				present: {
-					edits: {},
-				},
-			};
-		} );
-
 		it( 'should return true for draft posts where the date matches the modified date', () => {
 			const state = {
 				currentPost: {
@@ -1278,7 +1295,12 @@ describe( 'selectors', () => {
 					modified: '2018-09-27T01:23:45.678Z',
 					status: 'draft',
 				},
-				editor,
+				editor: {
+					present: {
+						edits: {},
+					},
+				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostDateFloating( state ) ).toBe( true );
@@ -1291,7 +1313,12 @@ describe( 'selectors', () => {
 					modified: '2018-09-27T01:23:45.678Z',
 					status: 'auto-draft',
 				},
-				editor,
+				editor: {
+					present: {
+						edits: {},
+					},
+				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostDateFloating( state ) ).toBe( true );
@@ -1304,7 +1331,12 @@ describe( 'selectors', () => {
 					modified: '1970-01-01T00:00:00.000Z',
 					status: 'draft',
 				},
-				editor,
+				editor: {
+					present: {
+						edits: {},
+					},
+				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostDateFloating( state ) ).toBe( false );
@@ -1317,7 +1349,12 @@ describe( 'selectors', () => {
 					modified: '1970-01-01T00:00:00.000Z',
 					status: 'auto-draft',
 				},
-				editor,
+				editor: {
+					present: {
+						edits: {},
+					},
+				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostDateFloating( state ) ).toBe( false );
@@ -1330,7 +1367,12 @@ describe( 'selectors', () => {
 					modified: '2018-09-27T01:23:45.678Z',
 					status: 'publish',
 				},
-				editor,
+				editor: {
+					present: {
+						edits: {},
+					},
+				},
+				initialEdits: {},
 			};
 
 			expect( isEditedPostDateFloating( state ) ).toBe( false );
@@ -1358,6 +1400,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const nextState = {
@@ -1374,6 +1417,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect(
@@ -1396,6 +1440,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const nextState = {
@@ -1414,6 +1459,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect(
@@ -1442,6 +1488,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const nextState = {
@@ -1460,6 +1507,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect(
@@ -1487,6 +1535,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const nextState = {
@@ -1505,6 +1554,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect(
@@ -1536,6 +1586,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const nextState = {
@@ -1556,6 +1607,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect(
@@ -1575,6 +1627,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const name = getBlockName( state, 'afd1cb17-2c08-4e7a-91be-007ba7ddc3a1' );
@@ -1601,6 +1654,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			const name = getBlockName( state, 'afd1cb17-2c08-4e7a-91be-007ba7ddc3a1' );
@@ -1625,6 +1679,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getBlock( state, 123 ) ).toEqual( {
@@ -1645,6 +1700,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getBlock( state, 123 ) ).toBe( null );
@@ -1667,6 +1723,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getBlock( state, 123 ) ).toEqual( {
@@ -1714,6 +1771,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getBlock( state, 123 ) ).toEqual( {
@@ -1745,6 +1803,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getBlocks( state ) ).toEqual( [
@@ -1797,6 +1856,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 			expect( getClientIdsOfDescendants( state, [ 'uuid-10' ] ) ).toEqual( [
 				'uuid-12',
@@ -1854,6 +1914,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 			expect( getClientIdsWithDescendants( state ) ).toEqual( [
 				'uuid-6',
@@ -2038,6 +2099,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				blockSelection: { start: null, end: null },
 			};
 
@@ -2061,6 +2123,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				blockSelection: { start: 23, end: 123 },
 			};
 
@@ -2084,6 +2147,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				blockSelection: { start: 23, end: 23 },
 			};
 
@@ -2228,6 +2292,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				blockSelection: { start: null, end: null },
 				currentPost: {},
 			};
@@ -2783,6 +2848,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				insertionPoint: {
 					rootClientId: undefined,
 					index: 0,
@@ -2815,6 +2881,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				insertionPoint: null,
 			};
 
@@ -2846,6 +2913,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				insertionPoint: null,
 			};
 
@@ -2877,6 +2945,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				insertionPoint: null,
 			};
 
@@ -2908,6 +2977,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				insertionPoint: null,
 			};
 
@@ -3015,6 +3085,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3035,6 +3106,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3054,6 +3126,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3073,6 +3146,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3092,6 +3166,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3112,6 +3187,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3176,6 +3252,7 @@ describe( 'selectors', () => {
 						},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3199,6 +3276,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3223,6 +3301,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3251,6 +3330,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3273,6 +3353,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3301,6 +3382,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				currentPost: {},
 			};
 
@@ -3482,6 +3564,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {
 						1: { clientId: 'block1', title: 'Reusable Block 1' },
@@ -3540,6 +3623,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {
 						1: { clientId: 'block1', title: 'Reusable Block 1' },
@@ -3577,6 +3661,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {
 						1: { clientId: 'block1', title: 'Reusable Block 1' },
@@ -3636,6 +3721,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {},
 				},
@@ -3660,6 +3746,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {},
 				},
@@ -3684,6 +3771,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {},
 				},
@@ -3715,6 +3803,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 				reusableBlocks: {
 					data: {},
 				},
@@ -3946,9 +4035,6 @@ describe( 'selectors', () => {
 				saving: {
 					requesting: false,
 				},
-				editor: {
-					edits: {},
-				},
 				currentPost: {
 					status: 'publish',
 				},
@@ -3963,9 +4049,6 @@ describe( 'selectors', () => {
 				saving: {
 					requesting: true,
 				},
-				editor: {
-					edits: {},
-				},
 				currentPost: {
 					status: 'draft',
 				},
@@ -3979,9 +4062,6 @@ describe( 'selectors', () => {
 				optimist: [],
 				saving: {
 					requesting: true,
-				},
-				editor: {
-					edits: {},
 				},
 				currentPost: {
 					status: 'publish',
@@ -3999,9 +4079,6 @@ describe( 'selectors', () => {
 							saving: {
 								requesting: false,
 							},
-							editor: {
-								edits: {},
-							},
 							currentPost: {
 								status: 'publish',
 							},
@@ -4015,9 +4092,6 @@ describe( 'selectors', () => {
 				],
 				saving: {
 					requesting: true,
-				},
-				editor: {
-					edits: {},
 				},
 				currentPost: {
 					status: 'publish',
@@ -4035,11 +4109,6 @@ describe( 'selectors', () => {
 							saving: {
 								requesting: false,
 							},
-							editor: {
-								edits: {
-									status: 'publish',
-								},
-							},
 							currentPost: {
 								status: 'draft',
 							},
@@ -4053,9 +4122,6 @@ describe( 'selectors', () => {
 				],
 				saving: {
 					requesting: true,
-				},
-				editor: {
-					edits: {},
 				},
 				currentPost: {
 					status: 'publish',
@@ -4153,6 +4219,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isPermalinkEditable( state ) ).toBe( false );
@@ -4166,6 +4233,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isPermalinkEditable( state ) ).toBe( false );
@@ -4179,6 +4247,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isPermalinkEditable( state ) ).toBe( true );
@@ -4192,6 +4261,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( isPermalinkEditable( state ) ).toBe( true );
@@ -4208,6 +4278,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getPermalink( state ) ).toBe( url );
@@ -4224,6 +4295,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getPermalink( state ) ).toBe( 'http://foo.test/bar/baz/' );
@@ -4247,6 +4319,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getPermalinkParts( state ) ).toEqual( parts );
@@ -4267,6 +4340,7 @@ describe( 'selectors', () => {
 						edits: {},
 					},
 				},
+				initialEdits: {},
 			};
 
 			expect( getPermalinkParts( state ) ).toEqual( parts );
